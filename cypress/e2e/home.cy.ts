@@ -14,7 +14,7 @@ describe("empty spec", () => {
     // get(): retrieve element
     // contains(): an assertion to check if the contained text in the element matches the one the user provides
     // Getting elements best practice in Cypress: using data attributes on your elements
-    cy.get("[data-test='hero-heading']").contains(
+    cy.getByData("hero-heading").contains(
       "Testing Next.js Applications with Cypress"
     )
   })
