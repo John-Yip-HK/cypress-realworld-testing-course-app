@@ -36,6 +36,20 @@ describe("empty spec", () => {
       // find(): narrow down the scope in which Cypress looks for an element.
       // Find the specified elemenet within another element.
       cy.getByData("course-0").find("a").eq(3).click()
+
+      // Testing location to verify the button navigates to the correct course page URL
+      // location(): get "pathname" (URL) of our application.
+      cy.location("pathname").should("eq", "/testing-your-first-application")
+    })
+
+    it("Course: Testing Foundations", () => {
+      cy.getByData("course-1").find("a").eq(3).click()
+      cy.location("pathname").should("eq", "/testing-foundations")
+    })
+
+    it("Course: Cypress Fundamentals", () => {
+      cy.getByData("course-2").find("a").eq(3).click()
+      cy.location("pathname").should("eq", "/cypress-fundamentals")
     })
   })
 })
